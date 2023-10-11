@@ -27,4 +27,3 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         // fotoerror.src = "resources/error_random.gif"; 
         // favs.appendChild(fotoerror);
     });
-
