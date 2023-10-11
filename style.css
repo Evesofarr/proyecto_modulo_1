@@ -1,0 +1,118 @@
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+#logoLink a img{
+    display: flex;
+    height: 60px;
+    width: 60px;
+    size: 100%;
+}
+#logoLink{
+    display: flex;
+}
+header h1 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    
+}
+
+@media (max-width: 350px) {
+    #logoLink a img{
+        height: 30px;
+        width: 30px;
+    }
+    #logoLink{
+        display: flex;
+
+    }
+    header h1 {
+        font-size: 10px !important;
+        
+    } 
+    
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(29, 17%, 41%);
+}
+#navMenu {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20vw;
+}
+
+body {
+    margin: auto;
+    background-image: url(/Users/asierbilbao/Documents/Code4Jobs/Modulo\ 1/proyecto_modulo_1/proyecto_modulo_1/resources/fondo\ HTML\ infinito.png);
+
+}
+
+footer {
+    padding: 10px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: hsl(29, 17%, 41%);
+
+}
+
+ul,
+li {
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+}
+
+#logSignInfo {
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    width: 50vW;
+    /*window view, se calcula en % */
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(29, 17%, 41%, 0.6);
+    flex-direction: column;
+    border-radius: 10px;
+
+
+
+}
+
+#signInfo {
+    display: none;
+}
+
+#logInButton {
+    border-radius: 5px;
+
+}
+
+#signInButton {
+    border-radius: 5px
+}
+
+#logSignButtons {
+    padding: 20px;
+    margin-right: 20px;
+    margin: auto;
+
+
+
+}
+
+#send {
+    padding: 20px;
+}
