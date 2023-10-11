@@ -23,7 +23,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     })
 
     .catch(error => {
-        // let fotoerror = document.createElement("img");
-        // fotoerror.src = "resources/error_random.gif"; 
-        // favs.appendChild(fotoerror);
+        let fotoerror = document.createElement("img");
+        fotoerror.src = "resources/error_random.gif"; 
+        favs.appendChild(fotoerror);
     });
