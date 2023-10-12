@@ -11,6 +11,19 @@
 .aqui img {
     filter: invert(100%);
 }
+#up img{
+    width: 30px;
+    height: 30px;
+}
+
+#up {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 1;
+    width: 20px;
+
+}
 
 body {
     margin: auto;
@@ -118,7 +131,7 @@ footer img {
     padding: 40px;
 }
 
-#recetaSemana a img{
+#recetaSemana a img {
     width: 65%;
     height: 65%;
     text-align: center;
@@ -127,15 +140,17 @@ footer img {
     padding-top: 30px;
     padding-bottom: 40px;
 }
-#recetaSemana p{
+
+#recetaSemana p {
     padding-top: 20px;
     text-align: center;
 }
 
-#recetaSemana h1{
+#recetaSemana h1 {
     font-size: 30px;
     text-align: center;
 }
+
 
 
 @media (max-width: 500px) {
