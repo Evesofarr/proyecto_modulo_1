@@ -3,8 +3,8 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     .then(response => response.json())
     .then(data => {
 
-        let favs = document.querySelector("#favs");
-        let favMenu = document.querySelector("#favMenu");
+        let semana = document.querySelector("#semana");
+        let recetaSemana = document.querySelector("#recetaSemana");
 
         let nombre = document.createElement("h1");
         let texto = document.createElement("p");
@@ -17,16 +17,16 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         foto.src = data.meals[0].strMealThumb
         link.href = data.meals[0].strSource
 
-        favs.appendChild(nombre);
-        favMenu.appendChild(texto);
+        semana.appendChild(nombre);
+        recetaSemana.appendChild(texto);
         link.appendChild(foto)
-        favMenu.appendChild(link)
+        recetaSemana.appendChild(link)
     })
 
     .catch(error => {
         let fotoerror = document.createElement("img");
         fotoerror.src = "resources/error_random.gif";
-        let favs = document.querySelector("#favs");
+        let semana = document.querySelector("#semana");
         favs.appendChild(fotoerror);
     });
 
@@ -34,6 +34,8 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 
 
 /* TODO: RECETAS*/
+
+/*------- TODO: buscador*/
 
 let buscar = document.querySelector("#buscar")
 
@@ -76,8 +78,12 @@ buscar.addEventListener("click", function () {
             respuestabusquedas.appendChild(fotoerror);
         });
 });
+buscar.addEventListener("click", function () {
+    let buscado = document.querySelector("#buscador");
+    let palabra = buscado.value;
+});
 
-
+/*----------- TODO: Recetas random*/
 function fetchAndDisplayRandomRecipe() {
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         .then(response => response.json())
@@ -95,44 +101,41 @@ function fetchAndDisplayRandomRecipe() {
             texto.textContent = data.meals[0].strInstructions;
             foto.src = data.meals[0].strMealThumb;
             link.href = data.meals[0].strSource;
-            // link.textContent = "Ver receta";
 
             respuestabusqueda.appendChild(nombre);
             respuestabusqueda.appendChild(texto);
-            respuestabusqueda.appendChild(foto);
             respuestabusqueda.appendChild(link);
+            link.appendChild(foto);
+
         })
         .catch(error => {
             console.log(error);
         });
 }
 
-// Fetch and display 10 random recipes when the page loads
 for (let i = 0; i < 10; i++) {
     fetchAndDisplayRandomRecipe();
 }
+/*------ TODO: Buscadores por tipo*/
 
 
-// let buscar = document.querySelector("#buscar");
-buscar.addEventListener("click", function () {
-    let buscado = document.querySelector("#buscador");
-    let palabra = buscado.value;
-});
 
-    
-    logInButton.addEventListener('click', () => {
-        logInfo.style.display = 'block';
-        signInfo.style.display = 'none';
-        logInButton.style.border = '2px solid black';
-        signInButton.style.border = '1px solid black';
-    });
-    
-    signInButton.addEventListener('click', () => {
-        signInfo.style.display = 'block';
-        signInButton.style.border = '2px solid black';
-        logInButton.style.border = '1px solid blac';
 
-        
-    });
-    
 
+
+
+
+// logInButton.addEventListener('click', () => {
+//     logInfo.style.display = 'block';
+//     signInfo.style.display = 'none';
+//     logInButton.style.border = '2px solid black';
+//     signInButton.style.border = '1px solid black';
+// });
+
+// signInButton.addEventListener('click', () => {
+//     signInfo.style.display = 'block';
+//     signInButton.style.border = '2px solid black';
+//     logInButton.style.border = '1px solid blac';
+
+
+// });
