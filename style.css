@@ -13,6 +13,7 @@
     width: 60px;
     size: 100%;
 }
+
 /*2effd327ae009acbc835cf41928f48cceeddde47*/
 
 #logoLink {
@@ -30,7 +31,7 @@ header h1 {
     font-size: 20px;
     display: flex;
     align-items: center;
-    
+
 
 }
 
@@ -72,14 +73,17 @@ header h1 {
         font-size: 10px !important;
 
     }
+
     #navMenu #main img {
         height: 30px;
         width: 30px;
     }
+
     #navMenu #recetas img {
         height: 30px;
         width: 30px;
     }
+
     #navMenu #usuario img {
         height: 25px;
         width: 25px;
@@ -91,7 +95,9 @@ header h1 {
 body {
     margin: auto;
     background-image: url(resources/fondo\ HTML\ infinito.png);
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
@@ -108,10 +114,10 @@ body {
     flex-direction: column;
     border-radius: 10px;
 
-    
-    
-    
-/*
+
+
+
+    /*
 >>>>>>> 2effd327ae009acbc835cf41928f48cceeddde47*/
 }
 
@@ -133,6 +139,7 @@ body {
     margin-right: 20px;
     margin: auto;
 }
+
 /* >>>>>>> 2effd327ae009acbc835cf41928f48cceeddde47 */
 
 #send {
@@ -144,13 +151,15 @@ footer {
     padding: 10px;
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
+    padding: 10px;
+    background-color: hsl(29, 17%, 41%);
+    text-align: center;
     width: 100%;
     background-color: hsl(29, 17%, 41%);
-    
+
 }
-footer ul  {
+
+footer ul {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -159,7 +168,7 @@ footer ul  {
 
 
 footer img {
-    
+
     height: 50px;
     width: 50px;
 }
@@ -169,20 +178,27 @@ footer img {
     margin: 0 10px;  Espacio entre cada ícono 
 }*/
 
-#logoLink a img{
+#logoLink a img {
     display: flex;
     height: 60px;
     width: 60px;
     size: 100%;
 }
-#logoLink{
+
+#logoLink {
     display: flex;
 }
+
 header h1 {
     font-size: 20px;
     display: flex;
     align-items: center;
     background-color: red;
-    
+
 }
+
 /* >>>>>>> 2effd327ae009acbc835cf41928f48cceeddde47 */
+
+main {
+    flex: 1;
+}
