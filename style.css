@@ -56,12 +56,42 @@ header h1 {
     height: 50px;
     width: 50px;
 }
+#busqtipo button {
+    
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 100%;
+    
+    
+}
+#busqtipo button img{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+#busqtipo button:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Cambia el color de fondo al hacer hover */
+}
+
+
+
+
+
+
+
 
 @media (max-width: 480px) {
     #logoLink a img {
         height: 30px;
         width: 30px;
+    
     }
+    
+
 
     #logoLink {
         display: flex;
@@ -84,8 +114,8 @@ header h1 {
         height: 25px;
         width: 25px;
     }
-
 }
+
 
 
 body {
@@ -182,7 +212,7 @@ header h1 {
     font-size: 20px;
     display: flex;
     align-items: center;
-    background-color: red;
+    
     
 }
 /* >>>>>>> 2effd327ae009acbc835cf41928f48cceeddde47 */
