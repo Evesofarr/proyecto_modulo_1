@@ -124,13 +124,14 @@ buscar.addEventListener("click", function () {
         logInfo.style.display = 'block';
         signInfo.style.display = 'none';
         logInButton.style.border = '2px solid black';
-        signInButton.style.border = '1px solid black'
+        signInButton.style.border = '1px solid black';
     });
     
     signInButton.addEventListener('click', () => {
         signInfo.style.display = 'block';
         signInButton.style.border = '2px solid black';
-        logInButton.style.border = '1px solid black'
+        logInButton.style.border = '1px solid blac';
+
         
     });
     
