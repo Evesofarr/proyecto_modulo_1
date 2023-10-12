@@ -107,15 +107,31 @@ footer img {
         height: 50%;
         text-align: center;
     }
-    /* TODO: RECETAS*/
-
-    /* #navMenu #usuario img {
-        height: 30px;
-        width: 30px;
-    } */
 }
+/* TODO: RECETAS*/
 
-
+/* #navMenu #usuario img {
+    height: 30px;
+    width: 30px;
+} */
+.meGustaButton{
+    display: flex;
+    background-color: hsl(29, 17%, 41%); /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Relleno interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+}
+.noMeGustaButton{
+    display: flex;
+    background-color: hsl(29, 17%, 41%); /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Relleno interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+}
 @media (min-width: 501px) {
     #navMenu {
         gap: 10px;
