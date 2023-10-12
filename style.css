@@ -5,37 +5,16 @@
     box-sizing: border-box;
     list-style: none;
 }
-#logoLink a img{
+
+#logoLink a img {
     display: flex;
     height: 60px;
     width: 60px;
     size: 100%;
 }
-#logoLink{
-    display: flex;
-}
-header h1 {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    background-color: red;
-    
-}
 
-@media (max-width: 350px) {
-    #logoLink a img{
-        height: 30px;
-        width: 30px;
-    }
-    #logoLink{
-        display: flex;
-
-    }
-    header h1 {
-        font-size: 10px !important;
-        
-    } 
-    
+#logoLink {
+    display: flex;
 }
 
 header {
@@ -44,6 +23,15 @@ header {
     justify-content: space-between;
     background-color: hsl(29, 17%, 41%);
 }
+
+header h1 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    
+
+}
+
 #navMenu {
     gap: 10px;
     display: flex;
@@ -52,28 +40,59 @@ header {
     width: 20vw;
 }
 
+#navMenu #main img {
+    height: 60px;
+    width: 60px;
+}
+
+#navMenu #recetas img {
+    height: 60px;
+    width: 60px;
+}
+
+#navMenu #usuario img {
+    height: 50px;
+    width: 50px;
+}
+
+@media (max-width: 480px) {
+    #logoLink a img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #logoLink {
+        display: flex;
+
+    }
+
+    header h1 {
+        font-size: 10px !important;
+
+    }
+    #navMenu #main img {
+        height: 30px;
+        width: 30px;
+    }
+    #navMenu #recetas img {
+        height: 30px;
+        width: 30px;
+    }
+    #navMenu #usuario img {
+        height: 25px;
+        width: 25px;
+    }
+
+}
+
+
 body {
     margin: auto;
     background-image: url(resources/fondo\ HTML\ infinito.png);
 
 }
 
-footer {
-    padding: 10px;
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: hsl(29, 17%, 41%);
 
-}
-
-ul,
-li {
-    display: flex;
-    justify-content: space-around;
-    width: 90vw;
-}
 
 #logSignInfo {
     display: flex;
@@ -86,9 +105,9 @@ li {
     background-color: hsl(29, 17%, 41%, 0.6);
     flex-direction: column;
     border-radius: 10px;
-
-
-
+    
+    
+    
 }
 
 #signInfo {
@@ -108,11 +127,40 @@ li {
     padding: 20px;
     margin-right: 20px;
     margin: auto;
-
-
-
+    
+    
+    
 }
 
 #send {
     padding: 20px;
 }
+
+footer {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: hsl(29, 17%, 41%);
+    
+}
+footer ul  {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 90vw;
+}
+
+
+footer img {
+    
+    height: 50px;
+    width: 50px;
+}
+
+/*footer li {
+    display: flex;
+    margin: 0 10px;  Espacio entre cada ícono 
+}*/
