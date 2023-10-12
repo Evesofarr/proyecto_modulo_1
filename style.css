@@ -6,12 +6,14 @@
     list-style: none;
 }
 
+
 #logoLink a img {
     display: flex;
     height: 60px;
     width: 60px;
     size: 100%;
 }
+/*2effd327ae009acbc835cf41928f48cceeddde47*/
 
 #logoLink {
     display: flex;
@@ -105,9 +107,12 @@ body {
     background-color: hsl(29, 17%, 41%, 0.6);
     flex-direction: column;
     border-radius: 10px;
+
     
     
     
+/*
+>>>>>>> 2effd327ae009acbc835cf41928f48cceeddde47*/
 }
 
 #signInfo {
@@ -127,14 +132,13 @@ body {
     padding: 20px;
     margin-right: 20px;
     margin: auto;
-    
-    
-    
 }
+/* >>>>>>> 2effd327ae009acbc835cf41928f48cceeddde47 */
 
 #send {
     padding: 20px;
 }
+
 
 footer {
     padding: 10px;
@@ -164,3 +168,21 @@ footer img {
     display: flex;
     margin: 0 10px;  Espacio entre cada ícono 
 }*/
+
+#logoLink a img{
+    display: flex;
+    height: 60px;
+    width: 60px;
+    size: 100%;
+}
+#logoLink{
+    display: flex;
+}
+header h1 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    
+}
+/* >>>>>>> 2effd327ae009acbc835cf41928f48cceeddde47 */
