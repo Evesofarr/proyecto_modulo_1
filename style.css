@@ -11,7 +11,8 @@
 .aqui img {
     filter: invert(100%);
 }
-#up img{
+
+#up img {
     width: 30px;
     height: 30px;
 }
@@ -28,6 +29,7 @@
 body {
     margin: auto;
     background-image: url(resources/fondo\ HTML\ infinito.png);
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -69,7 +71,6 @@ footer ul {
 
 
 footer img {
-
     height: 50px;
     width: 50px;
 }
@@ -151,6 +152,97 @@ footer img {
     text-align: center;
 }
 
+/*TODO: RECETAS*/
+
+#search {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#buscador {
+    width: 250px;
+    font-size: 20px;
+    font-weight: 700;
+    color: hsl(29, 17%, 41%);
+    border: 1px solid lightsteelblue;
+    background: transparent;
+}
+
+#buscar {
+    height: 34px;
+    width: 80px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    line-height: 4px;
+    border-width: 0;
+}
+
+/* RECETA RANDOM */
+
+
+#opciones div div a img {
+    width: 65%;
+    text-align: center;
+    justify-content: end;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: transparent;
+}
+
+#opciones div div p {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#opciones div h1 {
+    font-size: 25px;
+    margin: 20px;
+    text-align: center;
+}
+
+#opciones div {
+    background-color: rgb(238, 226, 226, 0.7);
+    border-radius: 15px;
+}
+
+#respuestabusqueda {
+    display: flex;
+    flex-direction: column-reverse;
+}
+/* #respuestabusqueda div div a img {
+    width: 65%;
+    text-align: center;
+    justify-content: end;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: transparent;
+}
+
+#respuestabusqueda div div p {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#respuestabusqueda h1 {
+    font-size: 25px;
+    margin: 20px;
+    text-align: center;
+} */
+
+#respuestabusqueda div {
+    background-color: rgb(238, 226, 226, 0.7);
+    border-radius: 15px;
+}
+
+
+
+
 
 
 @media (max-width: 500px) {
@@ -181,7 +273,24 @@ footer img {
     }
 
 
+
     /* TODO: RECETAS*/
+
+    #opciones {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 20px;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    #opciones div {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 40px;
+    }
+
 
     /* #navMenu #usuario img {
         height: 30px;
@@ -191,6 +300,8 @@ footer img {
 
 
 @media (min-width: 501px) {
+    /*TODO: INDEX*/
+
     #navMenu {
         gap: 10px;
         display: flex;
@@ -207,6 +318,29 @@ footer img {
     #navMenu #recetas img {
         height: 60px;
         width: 60px;
+    }
+
+    /* TODO: RECETAS*/
+
+    #buscador {
+        width: 50vw;
+    }
+
+    #opciones {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 20px;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    #opciones div {
+        flex: 1;
+        min-width: calc(20% - 30px);
+        margin: 20px;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     /* #navMenu #usuario img {

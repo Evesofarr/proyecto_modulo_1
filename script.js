@@ -49,6 +49,7 @@ buscar.addEventListener("click", function () {
             console.log(data);
             let respuestabusqueda = document.querySelector("#respuestabusqueda");
 
+            let contenidobusqueda = document.createElement("div")
             let nombre = document.createElement("h1");
             let texto = document.createElement("p");
             let link = document.createElement("a");
@@ -64,10 +65,11 @@ buscar.addEventListener("click", function () {
                 respuestabusqueda.removeChild(respuestabusqueda.firstChild);
             }
 
-            respuestabusqueda.appendChild(nombre);
-            respuestabusqueda.appendChild(texto);
-            respuestabusqueda.appendChild(foto);
-            respuestabusqueda.appendChild(link);
+            respuestabusqueda.appendChild(contenidobusqueda);
+            respuestabusqueda.appendChild(nombre)
+            contenidobusqueda.appendChild(texto);
+            contenidobusqueda.appendChild(link);
+            link.appendChild(foto);
 
         })
         .catch(error => {
@@ -89,27 +91,32 @@ function fetchAndDisplayRandomRecipe() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let respuestabusqueda = document.querySelector("#respuestabusqueda");
+            let opciones = document.querySelector("#opciones");
 
+            let contenedor = document.createElement("div")
+            let contenido = document.createElement("div")
             let nombre = document.createElement("h1");
-            let texto = document.createElement("p");
             let link = document.createElement("a");
             let foto = document.createElement("img");
             link.target = "_blank";
 
             nombre.textContent = data.meals[0].strMeal;
-            texto.textContent = data.meals[0].strInstructions;
             foto.src = data.meals[0].strMealThumb;
             link.href = data.meals[0].strSource;
 
-            respuestabusqueda.appendChild(nombre);
-            respuestabusqueda.appendChild(texto);
-            respuestabusqueda.appendChild(link);
+            opciones.appendChild(contenedor)
+            contenedor.appendChild(contenido)
+            contenedor.appendChild(nombre);
+            contenido.appendChild(link);
             link.appendChild(foto);
 
         })
         .catch(error => {
             console.log(error);
+            let fotoerror = document.createElement("img");
+            fotoerror.src = "resources/error_random.gif";
+            let respuestabusquedas = document.querySelector("#respuestabusqueda");
+            respuestabusquedas.appendChild(fotoerror);
         });
 }
 
