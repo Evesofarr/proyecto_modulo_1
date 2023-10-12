@@ -17,10 +17,10 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         foto.src = data.meals[0].strMealThumb
         link.href = data.meals[0].strSource
 
-        semana.appendChild(nombre);
         recetaSemana.appendChild(texto);
         link.appendChild(foto)
         recetaSemana.appendChild(link)
+        semana.appendChild(nombre);
     })
 
     .catch(error => {
