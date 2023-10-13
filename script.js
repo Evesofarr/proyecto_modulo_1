@@ -53,7 +53,7 @@ buscar.addEventListener("click", function () {
             let contenidobusqueda = document.createElement("div")
             let nombre = document.createElement("h1");
             let meGusta = document.createElement("button")
-            let noMeGusta = document.createElement("button")
+            // let noMeGusta = document.createElement("button")
             let texto = document.createElement("p");
             let link = document.createElement("a");
             let foto = document.createElement("img");
@@ -61,11 +61,11 @@ buscar.addEventListener("click", function () {
 
             //añade clase al button
             meGusta.classList.add("meGustaButton");
-            noMeGusta.classList.add("noMeGustaButton");
+            // noMeGusta.classList.add("noMeGustaButton");
 
             nombre.textContent = data.meals[0].strMeal
-            meGusta.textContent = "Me Gusta";
-            noMeGusta.textContent = "No me Gusta";
+            meGusta.textContent = "♡";
+            noMeGusta.textContent = "❤";
             texto.textContent = data.meals[0].strInstructions
             foto.src = data.meals[0].strMealThumb
             link.href = data.meals[0].strSource
@@ -100,9 +100,11 @@ buscar.addEventListener("click", function () {
                 }
             });
 
+
+
             respuestabusqueda.appendChild(contenidobusqueda);
-            respuestabusqueda.appendChild(meGusta);
-            respuestabusqueda.appendChild(noMeGusta);
+            contenidobusqueda.appendChild(meGusta);
+            contenidobusqueda.appendChild(noMeGusta);
             respuestabusqueda.appendChild(nombre)
             contenidobusqueda.appendChild(texto);
             contenidobusqueda.appendChild(link);
@@ -142,8 +144,8 @@ function fetchAndDisplayRandomRecipe() {
             noMeGusta.classList.add("noMeGustaButton");
 
             nombre.textContent = data.meals[0].strMeal;
-            meGusta.textContent = "Me Gusta";
-            noMeGusta.textContent = "No me Gusta";
+            meGusta.textContent = "♡";
+            noMeGusta.textContent = "❤";
             foto.src = data.meals[0].strMealThumb;
             link.href = data.meals[0].strSource;
 
@@ -176,8 +178,8 @@ function fetchAndDisplayRandomRecipe() {
             opciones.appendChild(contenedor)
             contenedor.appendChild(contenido)
             contenedor.appendChild(nombre);
-            respuestabusqueda.appendChild(meGusta);
-            respuestabusqueda.appendChild(noMeGusta);
+            contenido.appendChild(meGusta);
+            contenido.appendChild(noMeGusta);
             contenido.appendChild(link);
             link.appendChild(foto);
 
