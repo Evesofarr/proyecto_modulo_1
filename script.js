@@ -17,10 +17,10 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         foto.src = data.meals[0].strMealThumb
         link.href = data.meals[0].strSource
 
+        semana.appendChild(nombre);
         recetaSemana.appendChild(texto);
         link.appendChild(foto)
         recetaSemana.appendChild(link)
-        semana.appendChild(nombre);
     })
 
     .catch(error => {
@@ -50,22 +50,21 @@ buscar.addEventListener("click", function () {
             console.log(data);
             let respuestabusqueda = document.querySelector("#respuestabusqueda");
 
-            let contenidobusqueda = document.createElement("div")
             let nombre = document.createElement("h1");
             let meGusta = document.createElement("button")
-            // let noMeGusta = document.createElement("button")
+            let noMeGusta = document.createElement("button")
             let texto = document.createElement("p");
             let link = document.createElement("a");
             let foto = document.createElement("img");
-
+            
 
             //añade clase al button
             meGusta.classList.add("meGustaButton");
-            // noMeGusta.classList.add("noMeGustaButton");
+            noMeGusta.classList.add("noMeGustaButton");
 
             nombre.textContent = data.meals[0].strMeal
-            meGusta.textContent = "♡";
-            noMeGusta.textContent = "❤";
+            meGusta.textContent = "Me Gusta";
+            noMeGusta.textContent = "No me Gusta";
             texto.textContent = data.meals[0].strInstructions
             foto.src = data.meals[0].strMealThumb
             link.href = data.meals[0].strSource
@@ -75,41 +74,36 @@ buscar.addEventListener("click", function () {
                 respuestabusqueda.removeChild(respuestabusqueda.firstChild);
             }
             meGusta.addEventListener('click', () => {
-                // Verifica si la receta ya está en la lista de favoritos
-                let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
-                if (foundIndex === -1) {
-                    // Si no está en la lista, agrégala
-                    favoriteMeals.push /*añadir*/({
-                        receta: data.meals[0].strMeal
-                    });
-                }
+            // Verifica si la receta ya está en la lista de favoritos
+            let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+            if (foundIndex === -1) {
+            // Si no está en la lista, agrégala
+            favoriteMeals.push/*añadir*/({ receta: data.meals[0].strMeal });
+        }
 
-                // Guarda la lista actualizada en localStorage
-                localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
-            });
+            // Guarda la lista actualizada en localStorage
+            localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
+});
 
 
             noMeGusta.addEventListener('click', () => {
-                // Encuentra y elimina la receta de la lista de favoritos
-                let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
-                if (foundIndex !== -1) {
-                    favoriteMeals.splice /* Quitar */(foundIndex, 1);
+            // Encuentra y elimina la receta de la lista de favoritos
+            let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+            if (foundIndex !== -1) {
+            favoriteMeals.splice/* Quitar */(foundIndex, 1);
 
-                    // Guarda la lista actualizada en localStorage
-                    localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
-                }
-            });
+            // Guarda la lista actualizada en localStorage
+            localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
+    }
+});
 
-
-
-            respuestabusqueda.appendChild(contenidobusqueda);
-            contenidobusqueda.appendChild(meGusta);
-            contenidobusqueda.appendChild(noMeGusta);
-            respuestabusqueda.appendChild(nombre)
-            contenidobusqueda.appendChild(texto);
-            contenidobusqueda.appendChild(link);
-            link.appendChild(foto);
-        })
+            respuestabusqueda.appendChild(nombre);
+            respuestabusqueda.appendChild(meGusta);
+            respuestabusqueda.appendChild(noMeGusta);
+            respuestabusqueda.appendChild(texto);
+            respuestabusqueda.appendChild(foto);
+            respuestabusqueda.appendChild(link);
+})
         .catch(error => {
             console.log(error);
             let fotoerror = document.createElement("img");
@@ -129,13 +123,12 @@ function fetchAndDisplayRandomRecipe() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let opciones = document.querySelector("#opciones");
+            let respuestabusqueda = document.querySelector("#respuestabusqueda");
 
-            let contenedor = document.createElement("div")
-            let contenido = document.createElement("div")
             let nombre = document.createElement("h1");
             let meGusta = document.createElement("button")
             let noMeGusta = document.createElement("button")
+            let texto = document.createElement("p");
             let link = document.createElement("a");
             let foto = document.createElement("img");
             link.target = "_blank";
@@ -144,8 +137,9 @@ function fetchAndDisplayRandomRecipe() {
             noMeGusta.classList.add("noMeGustaButton");
 
             nombre.textContent = data.meals[0].strMeal;
-            meGusta.textContent = "♡";
-            noMeGusta.textContent = "❤";
+            meGusta.textContent = "Me Gusta";
+            noMeGusta.textContent = "No me Gusta";
+            texto.textContent = data.meals[0].strInstructions;
             foto.src = data.meals[0].strMealThumb;
             link.href = data.meals[0].strSource;
 
@@ -153,43 +147,36 @@ function fetchAndDisplayRandomRecipe() {
                 // Verifica si la receta ya está en la lista de favoritos
                 let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                 if (foundIndex === -1) {
-                    // Si no está en la lista, agrégala
-                    favoriteMeals.push /*añadir*/({
-                        receta: data.meals[0].strMeal
-                    });
-                }
-
+                // Si no está en la lista, agrégala
+                favoriteMeals.push/*añadir*/({ receta: data.meals[0].strMeal });
+            }
+    
                 // Guarda la lista actualizada en localStorage
                 localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
-            });
-
-
-            noMeGusta.addEventListener('click', () => {
+    });
+    
+    
+                noMeGusta.addEventListener('click', () => {
                 // Encuentra y elimina la receta de la lista de favoritos
                 let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                 if (foundIndex !== -1) {
-                    favoriteMeals.splice /* Quitar */(foundIndex, 1);
+                favoriteMeals.splice/* Quitar */(foundIndex, 1);
+    
+                // Guarda la lista actualizada en localStorage
+                localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
+        }
+    });
 
-                    // Guarda la lista actualizada en localStorage
-                    localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
-                }
-            });
-
-            opciones.appendChild(contenedor)
-            contenedor.appendChild(contenido)
-            contenedor.appendChild(nombre);
-            contenido.appendChild(meGusta);
-            contenido.appendChild(noMeGusta);
-            contenido.appendChild(link);
+            respuestabusqueda.appendChild(nombre);
+            respuestabusqueda.appendChild(meGusta);
+            respuestabusqueda.appendChild(noMeGusta);
+            respuestabusqueda.appendChild(texto);
+            respuestabusqueda.appendChild(link);
             link.appendChild(foto);
 
         })
         .catch(error => {
             console.log(error);
-            let fotoerror = document.createElement("img");
-            fotoerror.src = "resources/error_random.gif";
-            let respuestabusquedas = document.querySelector("#respuestabusqueda");
-            respuestabusquedas.appendChild(fotoerror);
         });
 }
 
