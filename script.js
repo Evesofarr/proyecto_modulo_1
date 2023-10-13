@@ -63,8 +63,8 @@ buscar.addEventListener("click", function () {
             noMeGusta.classList.add("noMeGustaButton");
 
             nombre.textContent = data.meals[0].strMeal
-            meGusta.textContent = "Me Gusta";
-            noMeGusta.textContent = "No me Gusta";
+            meGusta.textContent = "♡";
+            // noMeGusta.textContent = "❤";
             texto.textContent = data.meals[0].strInstructions
             foto.src = data.meals[0].strMealThumb
             link.href = data.meals[0].strSource
@@ -86,24 +86,27 @@ buscar.addEventListener("click", function () {
 });
 
 
-            noMeGusta.addEventListener('click', () => {
-            // Encuentra y elimina la receta de la lista de favoritos
-            let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
-            if (foundIndex !== -1) {
-            favoriteMeals.splice/* Quitar */(foundIndex, 1);
+            // noMeGusta.addEventListener('click', () => {
+            //     // Encuentra y elimina la receta de la lista de favoritos
+            //     let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+            //     if (foundIndex !== -1) {
+            //         favoriteMeals.splice /* Quitar */(foundIndex, 1);
 
-            // Guarda la lista actualizada en localStorage
-            localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
-    }
-});
+            //         // Guarda la lista actualizada en localStorage
+            //         localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
+            //     }
+            // });
 
-            respuestabusqueda.appendChild(nombre);
-            respuestabusqueda.appendChild(meGusta);
-            respuestabusqueda.appendChild(noMeGusta);
-            respuestabusqueda.appendChild(texto);
-            respuestabusqueda.appendChild(foto);
-            respuestabusqueda.appendChild(link);
-})
+
+
+            respuestabusqueda.appendChild(contenidobusqueda);
+            contenidobusqueda.appendChild(meGusta);
+            // contenidobusqueda.appendChild(noMeGusta);
+            respuestabusqueda.appendChild(nombre)
+            contenidobusqueda.appendChild(texto);
+            contenidobusqueda.appendChild(link);
+            link.appendChild(foto);
+        })
         .catch(error => {
             console.log(error);
             let fotoerror = document.createElement("img");
