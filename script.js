@@ -104,7 +104,7 @@ buscar.addEventListener("click", function () {
 
             respuestabusqueda.appendChild(contenidobusqueda);
             contenidobusqueda.appendChild(meGusta);
-            // contenidobusqueda.appendChild(noMeGusta);
+            //  contenidobusqueda.appendChild(noMeGusta);
             respuestabusqueda.appendChild(nombre)
             contenidobusqueda.appendChild(texto);
             contenidobusqueda.appendChild(link);
