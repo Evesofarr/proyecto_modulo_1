@@ -6,7 +6,8 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         let semana = document.querySelector("#semana");
         let recetaSemana = document.querySelector("#recetaSemana");
 
-        let nombre = document.createElement("h1");
+        let nombre = document.createElement("h2");
+        let recomendacion = document.createElement("h1")
         let meGusta = document.createElement("button")
         let texto = document.createElement("p");
         let link = document.createElement("a");
@@ -16,6 +17,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         meGusta.classList.add("meGustaButton");
 
         nombre.textContent = data.meals[0].strMeal;
+        recomendacion.textContent = "RECIPE OF THE DAY..."
         let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
         meGusta.textContent = isFavorite ? "❤" : "♡";
         texto.textContent = `This week we have a ${data.meals[0].strArea} ${data.meals[0].strCategory}, the perfect combination meal for you to enjoy it.`;
@@ -33,7 +35,9 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                     meGusta.textContent = "♡";
                 }
             } else {
-                favoriteMeals.push({ receta: data.meals[0].strMeal });
+                favoriteMeals.push({
+                    receta: data.meals[0].strMeal
+                });
                 meGusta.textContent = "❤";
             }
 
@@ -42,6 +46,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         });
 
         recetaSemana.appendChild(texto);
+        semana.appendChild(recomendacion)
         recetaSemana.appendChild(meGusta);
         link.appendChild(foto)
         recetaSemana.appendChild(link)
@@ -50,7 +55,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 
     .catch(error => {
         let fotoerror = document.createElement("img");
-        fotoerror.src = "resources/error_random.gif";
+        fotoerror.src = "resources/ERROR.gif";
         let semana = document.querySelector("#semana");
         favs.appendChild(fotoerror);
     });
@@ -88,10 +93,10 @@ buscar.addEventListener("click", function () {
             meGusta.classList.add("meGustaButton");
 
             nombre.textContent = data.meals[0].strMeal
-            
+
             let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
             meGusta.textContent = isFavorite ? "❤" : "♡";
-            
+
             texto.textContent = data.meals[0].strInstructions
             foto.src = data.meals[0].strMealThumb
             link.href = data.meals[0].strSource
@@ -111,7 +116,9 @@ buscar.addEventListener("click", function () {
                         meGusta.textContent = "♡";
                     }
                 } else {
-                    favoriteMeals.push({ receta: data.meals[0].strMeal });
+                    favoriteMeals.push({
+                        receta: data.meals[0].strMeal
+                    });
                     meGusta.textContent = "❤";
                 }
 
@@ -128,7 +135,8 @@ buscar.addEventListener("click", function () {
         .catch(error => {
             console.log(error);
             let fotoerror = document.createElement("img");
-            fotoerror.src = "resources/error_random.gif";
+            fotoerror.classList.add("gifError");
+            fotoerror.src = "resources/ERROR.gif";
             let respuestabusquedas = document.querySelector("#respuestabusqueda");
             respuestabusquedas.appendChild(fotoerror);
         });
@@ -173,7 +181,9 @@ function fetchAndDisplayRandomRecipe() {
                         meGusta.textContent = "♡";
                     }
                 } else {
-                    favoriteMeals.push({ receta: data.meals[0].strMeal });
+                    favoriteMeals.push({
+                        receta: data.meals[0].strMeal
+                    });
                     meGusta.textContent = "❤";
                 }
 
@@ -193,7 +203,7 @@ function fetchAndDisplayRandomRecipe() {
         .catch(error => {
             console.log(error);
             let fotoerror = document.createElement("img");
-            fotoerror.src = "resources/error_random.gif";
+            fotoerror.src = "resources/ERROR.gif";
             let respuestabusquedas = document.querySelector("#respuestabusqueda");
             respuestabusquedas.appendChild(fotoerror);
         });
