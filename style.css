@@ -319,7 +319,7 @@ footer img {
 } */
 .meGustaButton{
     display: flex;
-    background-color: hsl(29, 17%, 41%); /* Color de fondo */
+    background-color: hsl(0, 55%, 56%); /* Color de fondo */
   color: white; /* Color del texto */
   padding: 10px 20px; /* Relleno interno */
   border: none; /* Sin borde */
