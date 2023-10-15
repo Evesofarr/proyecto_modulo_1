@@ -63,19 +63,17 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 
 /*------- TODO: buscador*/
 
-let buscar = document.querySelector("#buscar")
+let buscar = document.querySelector("#buscar");
 let favoriteMeals = JSON.parse(localStorage.getItem('favoriteMeals')) || [];
 
-
 buscar.addEventListener("click", function () {
-    let buscado = document.querySelector("#buscador")
+    let buscado = document.querySelector("#buscador");
     let palabra = buscado.value;
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${palabra}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let respuestabusqueda = document.querySelector("#respuestabusqueda");
 
             let contenidobusqueda = document.createElement("div")
             let nombre = document.createElement("h1");
@@ -140,6 +138,7 @@ buscar.addEventListener("click", function () {
 });
 
 /*----------- TODO: Recetas random*/
+
 function fetchAndDisplayRandomRecipe() {
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         .then(response => response.json())
@@ -204,10 +203,10 @@ function fetchAndDisplayRandomRecipe() {
 
 function mostrarComidasFavoritas() {
     let favoriteMeals = JSON.parse(localStorage.getItem('favoriteMeals')) || [];
-    let respuestabusqueda = document.querySelector("#respuestabusqueda");
+    let likes = document.querySelector("#likes");
 
-    while (respuestabusqueda.firstChild) {
-        respuestabusqueda.removeChild(respuestabusqueda.firstChild);
+    while (likes.firstChild) {
+        likes.removeChild(likes.firstChild);
     }
 
     favoriteMeals.forEach(favoriteMeal => {
@@ -254,9 +253,9 @@ function mostrarComidasFavoritas() {
                     localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
                 });
 
-                respuestabusqueda.appendChild(contenidobusqueda);
+                likes.appendChild(contenidobusqueda);
                 contenidobusqueda.appendChild(meGusta);
-                respuestabusqueda.appendChild(nombre);
+                likes.appendChild(nombre);
                 contenidobusqueda.appendChild(link);
                 link.appendChild(foto);
             })
