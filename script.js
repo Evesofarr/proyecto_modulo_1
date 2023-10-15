@@ -13,7 +13,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         let link = document.createElement("a");
         let foto = document.createElement("img");
         link.target = "_blank";
-        //añade clase al button
         meGusta.classList.add("meGustaButton");
 
         nombre.textContent = data.meals[0].strMeal;
@@ -25,7 +24,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         link.href = data.meals[0].strSource
 
         meGusta.addEventListener('click', () => {
-            // Verifica si la receta está en la lista de favoritos
             const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
             if (isFavorite) {
@@ -40,8 +38,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                 });
                 meGusta.textContent = "❤";
             }
-
-            // Guarda la lista actualizada en localStorage
             localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
         });
 
@@ -89,7 +85,6 @@ buscar.addEventListener("click", function () {
             let foto = document.createElement("img");
 
 
-            //añade clase al button
             meGusta.classList.add("meGustaButton");
 
             nombre.textContent = data.meals[0].strMeal
@@ -106,7 +101,6 @@ buscar.addEventListener("click", function () {
                 respuestabusqueda.removeChild(respuestabusqueda.firstChild);
             }
             meGusta.addEventListener('click', () => {
-                // Verifica si la receta está en la lista de favoritos
                 const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
@@ -122,7 +116,6 @@ buscar.addEventListener("click", function () {
                     meGusta.textContent = "❤";
                 }
 
-                // Guarda la lista actualizada en localStorage
                 localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
             });
             respuestabusqueda.appendChild(contenidobusqueda);
@@ -161,7 +154,6 @@ function fetchAndDisplayRandomRecipe() {
             let link = document.createElement("a");
             let foto = document.createElement("img");
             link.target = "_blank";
-            //añade clase al button
             meGusta.classList.add("meGustaButton");
 
             nombre.textContent = data.meals[0].strMeal;
@@ -170,8 +162,11 @@ function fetchAndDisplayRandomRecipe() {
             foto.src = data.meals[0].strMealThumb;
             link.href = data.meals[0].strSource;
 
+            while (respuestabusqueda.firstChild) {
+                respuestabusqueda.removeChild(respuestabusqueda.firstChild);
+            }
+
             meGusta.addEventListener('click', () => {
-                // Verifica si la receta está en la lista de favoritos
                 const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
@@ -186,8 +181,6 @@ function fetchAndDisplayRandomRecipe() {
                     });
                     meGusta.textContent = "❤";
                 }
-
-                // Guarda la lista actualizada en localStorage
                 localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
             });
 
@@ -209,29 +202,6 @@ function fetchAndDisplayRandomRecipe() {
         });
 }
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
     fetchAndDisplayRandomRecipe();
 }
-/*------ TODO: Buscadores por tipo*/
-
-
-
-
-
-
-
-
-// logInButton.addEventListener('click', () => {
-//     logInfo.style.display = 'block';
-//     signInfo.style.display = 'none';
-//     logInButton.style.border = '2px solid black';
-//     signInButton.style.border = '1px solid black';
-// });
-
-// signInButton.addEventListener('click', () => {
-//     signInfo.style.display = 'block';
-//     signInButton.style.border = '2px solid black';
-//     logInButton.style.border = '1px solid blac';
-
-
-// });

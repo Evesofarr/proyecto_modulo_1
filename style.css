@@ -99,8 +99,8 @@ footer img {
 }
 
 #welcome img {
-    width: 65%;
-    height: 65%;
+    width: 45%;
+    height: 45%;
     text-align: center;
     justify-content: end;
     margin: auto;
@@ -114,11 +114,15 @@ footer img {
 }
 
 #welcome div h1 {
+    color: hsl(29, 17%, 41%);
     font-size: 30px;
     text-align: center;
 }
 
 #welcome div p {
+    width: 80vw;
+    font-weight: 700;
+    margin: auto;
     padding: 55px;
 }
 
@@ -126,7 +130,7 @@ footer img {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
-    margin: 20px;
+    margin: 50px;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 40px;
@@ -134,14 +138,16 @@ footer img {
 
 #semana h1 {
     order: 1;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    padding-bottom: 10px;
     border-bottom: 2px dotted black;
+    color: hsl(29, 17%, 41%);
 }
 
 
 #recetaSemana a img {
-    width: 65%;
-    height: 65%;
+    width: 45%;
+    height: 45%;
     text-align: center;
     justify-content: end;
     margin: auto;
