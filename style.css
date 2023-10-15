@@ -315,19 +315,21 @@ footer img {
         display: flex;
     }
 
-    #main a img {
+    #main img {
         height: 30px;
         width: 30px;
     }
 
-    #recetas a img {
+    #recetas img {
         height: 30px;
         width: 30px;
     }
 
-    #likes a img {
-        height: 30px;
-        width: 30px;
+    #likes img {
+        height: 25px;
+        width: 25px;
+        margin-bottom: 3px;
+        background-color: transparent;
     }
 
     #welcome img {
@@ -418,6 +420,7 @@ footer img {
         height: 60px;
         width: 60px;
     }
+
 
     /* TODO: RECETAS*/
 
