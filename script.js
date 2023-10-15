@@ -23,11 +23,11 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         link.href = data.meals[0].strSource
 
         meGusta.addEventListener('click', () => {
-            // Verifica si la receta está en la lista de favoritos
-            const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+            // Verifica si la receta está en la lista de favoritos y devuelve true or false (se puede hacer con forEach tambien pero hay que poner true/false porque sino no devuelve nada)
+            let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
             if (isFavorite) {
-                const foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+                let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                 if (foundIndex !== -1) {
                     favoriteMeals.splice(foundIndex, 1);
                     meGusta.textContent = "♡";
@@ -102,10 +102,10 @@ buscar.addEventListener("click", function () {
             }
             meGusta.addEventListener('click', () => {
                 // Verifica si la receta está en la lista de favoritos
-                const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+                let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
-                    const foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+                    let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                     if (foundIndex !== -1) {
                         favoriteMeals.splice(foundIndex, 1);
                         meGusta.textContent = "♡";
@@ -164,10 +164,10 @@ function fetchAndDisplayRandomRecipe() {
 
             meGusta.addEventListener('click', () => {
                 // Verifica si la receta está en la lista de favoritos
-                const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+                let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
-                    const foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+                    let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                     if (foundIndex !== -1) {
                         favoriteMeals.splice(foundIndex, 1);
                         meGusta.textContent = "♡";
