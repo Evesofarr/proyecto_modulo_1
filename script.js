@@ -27,7 +27,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
             const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
             if (isFavorite) {
-                const foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+                let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                 if (foundIndex !== -1) {
                     favoriteMeals.splice(foundIndex, 1);
                     meGusta.textContent = "♡";
@@ -104,7 +104,7 @@ buscar.addEventListener("click", function () {
                 const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
-                    const foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+                    let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                     if (foundIndex !== -1) {
                         favoriteMeals.splice(foundIndex, 1);
                         meGusta.textContent = "♡";
@@ -170,7 +170,7 @@ function fetchAndDisplayRandomRecipe() {
                 const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
-                    const foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+                    let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
                     if (foundIndex !== -1) {
                         favoriteMeals.splice(foundIndex, 1);
                         meGusta.textContent = "♡";
