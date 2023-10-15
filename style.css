@@ -132,6 +132,13 @@ footer img {
     padding: 40px;
 }
 
+#semana h1 {
+    order: 1;
+    margin-bottom: 50px;
+    border-bottom: 2px dotted black;
+}
+
+
 #recetaSemana a img {
     width: 65%;
     height: 65%;
@@ -144,6 +151,7 @@ footer img {
 
 #recetaSemana p {
     padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
@@ -156,10 +164,13 @@ footer img {
 
 #search {
     text-align: center;
-    margin: 20px;
+    width: 70vw;
+    margin: auto;
+    margin-top: 20px;
     padding: 20px;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(205, 81, 81, 0.5);
+    border-radius: 15px;
 }
 
 #buscador {
@@ -168,14 +179,15 @@ footer img {
     font-weight: 700;
     color: hsl(29, 17%, 41%);
     border: 1px solid lightsteelblue;
-    background: transparent;
+    background: white;
 }
 
 #buscar {
     height: 34px;
     width: 80px;
     font-size: 14px;
-    color: #555;
+    color: white;
+    background-color: rgba(205, 81, 81);
     text-align: center;
     line-height: 4px;
     border-width: 0;
@@ -205,45 +217,79 @@ footer img {
     text-align: center;
 }
 
+
 #opciones div {
-    background-color: rgb(238, 226, 226, 0.7);
+    background-color: rgb(238, 226, 226);
     border-radius: 15px;
 }
 
+
+
+/* TODO: RECETA BUSCADA*/
+
 #respuestabusqueda {
     display: flex;
+    width: 80vw;
+    margin: auto;
+    margin-top: 80px;
     flex-direction: column-reverse;
+    background-color: rgb(238, 226, 226, 0.7);
+    border-radius: 15px;
+    margin-bottom: 30px;
 }
-/* #respuestabusqueda div div a img {
+
+#respuestabusqueda h1 {
+    font-size: 50px;
+    margin: 20px;
+    text-align: center;
+}
+
+#respuestabusqueda div {
+    /* background-color: rgb(238, 226, 226, 0.7); */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+}
+
+#respuestabusqueda div p {
+    padding-top: 20px;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    padding: 30px;
+    background-color: rgb(238, 226, 226, 0.7);
+}
+
+#respuestabusqueda div a {
+    display: flex;
+}
+
+#respuestabusqueda div a img {
     width: 65%;
     text-align: center;
-    justify-content: end;
     margin: auto;
     padding-top: 30px;
     padding-bottom: 40px;
     background-color: transparent;
 }
 
-#respuestabusqueda div div p {
-    padding-top: 20px;
-    text-align: center;
+.meGustaButton,
+.noMeGustaButton {
+    display: flex;
+    justify-content: center;
+    background-color: hsl(0, 55%, 56%);
+    color: white;
+    padding: 10px 20px;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
-
-#respuestabusqueda h1 {
-    font-size: 25px;
-    margin: 20px;
-    text-align: center;
-} */
-
-#respuestabusqueda div {
-    background-color: rgb(238, 226, 226, 0.7);
-    border-radius: 15px;
+.gifError{
+    width: 30vw;
+    margin: auto;
 }
-
-
-
-
-
 
 @media (max-width: 500px) {
 
@@ -272,19 +318,11 @@ footer img {
         width: 30px;
     }
 
-    #welcome {
-        display: flex;
-        text-align: center;
-        padding: 20px;
-        background-color: hsl(29, 17%, 41%, 0.5);
-    }
-    #welcome img{
+    #welcome img {
         width: 50%;
         height: 50%;
         text-align: center;
     }
-
-
 
 
     /* TODO: RECETAS*/
@@ -304,37 +342,48 @@ footer img {
         margin-bottom: 40px;
     }
 
+    #search {
+        text-align: center;
+        width: 70vw;
+        margin: auto;
+        margin-top: 20px;
+        padding: 20px;
+        justify-content: space-between;
+        background-color: rgba(205, 81, 81, 0.5);
+        border-radius: 15px;
+    }
 
-    /* #navMenu #usuario img {
-        height: 30px;
-        width: 30px;
-    } */
+    #buscador {
+        width: 150px;
+        font-size: 20px;
+        font-weight: 700;
+        color: hsl(29, 17%, 41%);
+        border: 1px solid lightsteelblue;
+        background: white;
+    }
 
-}
-/* TODO: RECETAS*/
+    #respuestabusqueda {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        margin: auto;
+        margin-top:30px;
+        justify-content: space-between;
+        /* padding: 40px; */
+    }
+    #respuestabusqueda div p{
+        width: 90%;;
+        padding: 10px;
+    }
 
-/* #navMenu #usuario img {
-    height: 30px;
-    width: 30px;
-} */
-.meGustaButton{
-    display: flex;
-    background-color: hsl(0, 55%, 56%); /* Color de fondo */
-  color: white; /* Color del texto */
-  padding: 10px 20px; /* Relleno interno */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Borde redondeado */
-  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    .gifError{
+    width: 90%;
+    margin: auto;
+    padding: 30px;
 }
-.noMeGustaButton{
-    display: flex;
-    background-color: hsl(29, 17%, 41%); /* Color de fondo */
-  color: white; /* Color del texto */
-  padding: 10px 20px; /* Relleno interno */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Borde redondeado */
-  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
 }
+
+
 @media (min-width: 501px) {
     /*TODO: INDEX*/
 
@@ -379,8 +428,4 @@ footer img {
         flex-direction: column-reverse;
     }
 
-    /* #navMenu #usuario img {
-        height: 50px;
-        width: 50px;
-    } */
 }
