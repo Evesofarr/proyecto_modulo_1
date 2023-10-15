@@ -4,22 +4,35 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
+    font-family: 'Spline Sans Mono', monospace;
 }
 
-@media (max-width: 350px) {
-    #logoLink a img{
-        height: 30px;
-        width: 30px;
-    }
-    #logoLink{
-        display: flex;
+.aqui img {
+    filter: invert(100%);
+}
 
-    }
-    header h1 {
-        font-size: 10px !important;
-        
-    } 
-    
+#up img {
+    width: 30px;
+    height: 30px;
+}
+
+#up {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 1;
+    width: 20px;
+
+}
+
+body {
+    margin: auto;
+    background-image: url(resources/fondo\ HTML\ infinito.png);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -28,85 +41,408 @@ header {
     justify-content: space-between;
     background-color: hsl(29, 17%, 41%);
 }
-#navMenu {
-    gap: 10px;
+
+header h1 {
+    font-size: 30px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: 20vw;
 }
 
-body {
-    margin: auto;
-    background-image: url(resources/fondo\ HTML\ infinito.png);
-
+main {
+    flex: 1;
 }
 
 footer {
     padding: 10px;
     display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    justify-content: center;
+    padding: 10px;
     background-color: hsl(29, 17%, 41%);
-
+    text-align: center;
+    width: 100%;
 }
 
-ul,
-li {
+footer ul {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
     width: 90vw;
 }
 
-#logSignInfo {
-    display: flex;
-    margin: auto;
-    margin-top: 40px;
-    width: 50vW;
-    /*window view, se calcula en % */
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(29, 17%, 41%, 0.6);
-    flex-direction: column;
-    border-radius: 10px;
+
+footer img {
+    height: 50px;
+    width: 50px;
 }
 
-#signInfo {
-    display: none;
-}
-
-#logInButton {
-    border-radius: 5px;
-
-}
-
-#signInButton {
-    border-radius: 5px
-}
-
-#logSignButtons {
-    padding: 20px;
-    margin-right: 20px;
-    margin: auto;
-}
-
-#send {
-    padding: 20px;
-}
-#logoLink a img{
+#logoLink a img {
     display: flex;
     height: 60px;
     width: 60px;
     size: 100%;
 }
-#logoLink{
+
+#logoLink {
     display: flex;
 }
-header h1 {
-    font-size: 20px;
+
+#logoLink {
     display: flex;
-    align-items: center;
-    background-color: red;
-    
+}
+
+/* TODO: INDEX*/
+#welcome {
+    text-align: center;
+    margin: 20px;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#welcome img {
+    width: 45%;
+    height: 45%;
+    text-align: center;
+    justify-content: end;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+#welcome div {
+    text-align: justify;
+    font-weight: B00;
+}
+
+#welcome div h1 {
+    color: hsl(29, 17%, 41%);
+    font-size: 30px;
+    text-align: center;
+}
+
+#welcome div p {
+    width: 80vw;
+    font-weight: 700;
+    margin: auto;
+    padding: 55px;
+}
+
+#semana {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 50px;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+}
+
+#semana h1 {
+    order: 1;
+    margin-bottom: 100px;
+    padding-bottom: 10px;
+    border-bottom: 2px dotted black;
+    color: hsl(29, 17%, 41%);
+}
+
+
+#recetaSemana a img {
+    width: 45%;
+    height: 45%;
+    text-align: center;
+    justify-content: end;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+#recetaSemana p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#recetaSemana h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+/*TODO: RECETAS*/
+
+#search {
+    text-align: center;
+    width: 70vw;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: rgba(205, 81, 81, 0.5);
+    border-radius: 15px;
+}
+
+#buscador {
+    width: 250px;
+    font-size: 20px;
+    font-weight: 700;
+    color: hsl(29, 17%, 41%);
+    border: 1px solid lightsteelblue;
+    background: white;
+}
+
+#buscar {
+    height: 34px;
+    width: 80px;
+    font-size: 14px;
+    color: white;
+    background-color: rgba(205, 81, 81);
+    text-align: center;
+    line-height: 4px;
+    border-width: 0;
+}
+
+/* RECETA RANDOM */
+
+
+#opciones div div a img {
+    width: 65%;
+    text-align: center;
+    justify-content: end;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: transparent;
+}
+
+#opciones div div p {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#opciones div h1 {
+    font-size: 25px;
+    margin: 20px;
+    text-align: center;
+}
+
+
+#opciones div {
+    background-color: rgb(238, 226, 226);
+    border-radius: 15px;
+}
+
+
+
+/* TODO: RECETA BUSCADA*/
+
+#respuestabusqueda {
+    display: flex;
+    width: 80vw;
+    margin: auto;
+    margin-top: 80px;
+    flex-direction: column-reverse;
+    background-color: rgb(238, 226, 226, 0.7);
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+#respuestabusqueda h1 {
+    font-size: 50px;
+    margin: 20px;
+    text-align: center;
+}
+
+#respuestabusqueda div {
+    /* background-color: rgb(238, 226, 226, 0.7); */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+}
+
+#respuestabusqueda div p {
+    padding-top: 20px;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    padding: 30px;
+    background-color: rgb(238, 226, 226, 0.7);
+}
+
+#respuestabusqueda div a {
+    display: flex;
+}
+
+#respuestabusqueda div a img {
+    width: 65%;
+    text-align: center;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: transparent;
+}
+
+.meGustaButton,
+.noMeGustaButton {
+    display: flex;
+    justify-content: center;
+    background-color: hsl(0, 55%, 56%);
+    color: white;
+    padding: 10px 20px;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gifError {
+    width: 30vw;
+    margin: auto;
+}
+
+@media (max-width: 500px) {
+
+    /*TODO: INDEX*/
+    header h1 {
+        font-size: 15px;
+
+    }
+
+    #logoLink a img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #logoLink {
+        display: flex;
+    }
+
+    #main img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #recetas img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #likes img {
+        height: 25px;
+        width: 25px;
+        margin-bottom: 3px;
+        background-color: transparent;
+    }
+
+    #welcome img {
+        width: 50%;
+        height: 50%;
+        text-align: center;
+    }
+
+
+    /* TODO: RECETAS*/
+
+    #opciones {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 20px;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    #opciones div {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 40px;
+    }
+
+    #search {
+        text-align: center;
+        width: 70vw;
+        margin: auto;
+        margin-top: 20px;
+        padding: 20px;
+        justify-content: space-between;
+        background-color: rgba(205, 81, 81, 0.5);
+        border-radius: 15px;
+    }
+
+    #buscador {
+        width: 150px;
+        font-size: 20px;
+        font-weight: 700;
+        color: hsl(29, 17%, 41%);
+        border: 1px solid lightsteelblue;
+        background: white;
+    }
+
+    #respuestabusqueda {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        margin: auto;
+        margin-top: 30px;
+        justify-content: space-between;
+        /* padding: 40px; */
+    }
+
+    #respuestabusqueda div p {
+        width: 90%;
+        ;
+        padding: 10px;
+    }
+
+    .gifError {
+        width: 90%;
+        margin: auto;
+        padding: 30px;
+    }
+}
+
+
+@media (min-width: 501px) {
+    /*TODO: INDEX*/
+
+    #navMenu {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 20vw;
+    }
+
+    #navMenu #main img {
+        height: 60px;
+        width: 60px;
+    }
+
+    #navMenu #recetas img {
+        height: 60px;
+        width: 60px;
+    }
+
+
+    /* TODO: RECETAS*/
+
+    #buscador {
+        width: 50vw;
+    }
+
+    #opciones {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 20px;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    #opciones div {
+        flex: 1;
+        min-width: calc(20% - 30px);
+        margin: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
 }
