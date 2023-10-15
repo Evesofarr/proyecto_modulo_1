@@ -13,7 +13,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         let link = document.createElement("a");
         let foto = document.createElement("img");
         link.target = "_blank";
-        //añade clase al button
         meGusta.classList.add("meGustaButton");
 
         nombre.textContent = data.meals[0].strMeal;
@@ -25,8 +24,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         link.href = data.meals[0].strSource
 
         meGusta.addEventListener('click', () => {
-            // Verifica si la receta está en la lista de favoritos y devuelve true or false (se puede hacer con forEach tambien pero hay que poner true/false porque sino no devuelve nada)
-            let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+            const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
             if (isFavorite) {
                 let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
@@ -40,8 +38,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                 });
                 meGusta.textContent = "❤";
             }
-
-            // Guarda la lista actualizada en localStorage
             localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
         });
 
@@ -89,7 +85,6 @@ buscar.addEventListener("click", function () {
             let foto = document.createElement("img");
 
 
-            //añade clase al button
             meGusta.classList.add("meGustaButton");
 
             nombre.textContent = data.meals[0].strMeal
@@ -106,8 +101,7 @@ buscar.addEventListener("click", function () {
                 respuestabusqueda.removeChild(respuestabusqueda.firstChild);
             }
             meGusta.addEventListener('click', () => {
-                // Verifica si la receta está en la lista de favoritos
-                let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+                const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
                     let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
@@ -122,7 +116,6 @@ buscar.addEventListener("click", function () {
                     meGusta.textContent = "❤";
                 }
 
-                // Guarda la lista actualizada en localStorage
                 localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
             });
             respuestabusqueda.appendChild(contenidobusqueda);
@@ -161,7 +154,6 @@ function fetchAndDisplayRandomRecipe() {
             let link = document.createElement("a");
             let foto = document.createElement("img");
             link.target = "_blank";
-            //añade clase al button
             meGusta.classList.add("meGustaButton");
 
             nombre.textContent = data.meals[0].strMeal;
@@ -170,9 +162,12 @@ function fetchAndDisplayRandomRecipe() {
             foto.src = data.meals[0].strMealThumb;
             link.href = data.meals[0].strSource;
 
+            while (respuestabusqueda.firstChild) {
+                respuestabusqueda.removeChild(respuestabusqueda.firstChild);
+            }
+
             meGusta.addEventListener('click', () => {
-                // Verifica si la receta está en la lista de favoritos
-                let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+                const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
                     let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
@@ -186,8 +181,6 @@ function fetchAndDisplayRandomRecipe() {
                     });
                     meGusta.textContent = "❤";
                 }
-
-                // Guarda la lista actualizada en localStorage
                 localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
             });
 
@@ -209,29 +202,76 @@ function fetchAndDisplayRandomRecipe() {
         });
 }
 
-for (let i = 0; i < 10; i++) {
-    fetchAndDisplayRandomRecipe();
+function mostrarComidasFavoritas() {
+    let favoriteMeals = JSON.parse(localStorage.getItem('favoriteMeals')) || [];
+    let respuestabusqueda = document.querySelector("#respuestabusqueda");
+
+    while (respuestabusqueda.firstChild) {
+        respuestabusqueda.removeChild(respuestabusqueda.firstChild);
+    }
+
+    favoriteMeals.forEach(favoriteMeal => {
+        let mealName = favoriteMeal.receta;
+
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+
+                let contenidobusqueda = document.createElement("div");
+                let nombre = document.createElement("h1");
+                let meGusta = document.createElement("button");
+                let link = document.createElement("a");
+                let foto = document.createElement("img");
+
+                meGusta.classList.add("meGustaButton");
+
+                nombre.textContent = data.meals[0].strMeal;
+
+                let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+                meGusta.textContent = isFavorite ? "❤" : "♡";
+
+                foto.src = data.meals[0].strMealThumb;
+                link.href = data.meals[0].strSource;
+                link.target = "_blank";
+
+                meGusta.addEventListener('click', () => {
+                    const isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
+
+                    if (isFavorite) {
+                        let foundIndex = favoriteMeals.findIndex(item => item.receta === data.meals[0].strMeal);
+                        if (foundIndex !== -1) {
+                            favoriteMeals.splice(foundIndex, 1);
+                            meGusta.textContent = "♡";
+                        }
+                    } else {
+                        favoriteMeals.push({
+                            receta: data.meals[0].strMeal
+                        });
+                        meGusta.textContent = "❤";
+                    }
+
+                    localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
+                });
+
+                respuestabusqueda.appendChild(contenidobusqueda);
+                contenidobusqueda.appendChild(meGusta);
+                respuestabusqueda.appendChild(nombre);
+                contenidobusqueda.appendChild(link);
+                link.appendChild(foto);
+            })
+            .catch(error => {
+                console.log(error);
+                let fotoerror = document.createElement("img");
+                fotoerror.classList.add("gifError");
+                fotoerror.src = "resources/ERROR.gif";
+                let respuestabusquedas = document.querySelector("#respuestabusqueda");
+                respuestabusquedas.appendChild(fotoerror);
+            });
+    });
 }
-/*------ TODO: Buscadores por tipo*/
 
+let botonLikes = document.querySelector("#likes");
+botonLikes.addEventListener("click", mostrarComidasFavoritas);
 
-
-
-
-
-
-
-// logInButton.addEventListener('click', () => {
-//     logInfo.style.display = 'block';
-//     signInfo.style.display = 'none';
-//     logInButton.style.border = '2px solid black';
-//     signInButton.style.border = '1px solid black';
-// });
-
-// signInButton.addEventListener('click', () => {
-//     signInfo.style.display = 'block';
-//     signInButton.style.border = '2px solid black';
-//     logInButton.style.border = '1px solid blac';
-
-
-// });
+mostrarComidasFavoritas();
