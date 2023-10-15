@@ -292,7 +292,8 @@ footer img {
     border-radius: 5px;
     cursor: pointer;
 }
-.gifError{
+
+.gifError {
     width: 30vw;
     margin: auto;
 }
@@ -314,12 +315,17 @@ footer img {
         display: flex;
     }
 
-    #navMenu #main img {
+    #main a img {
         height: 30px;
         width: 30px;
     }
 
-    #navMenu #recetas img {
+    #recetas a img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #likes a img {
         height: 30px;
         width: 30px;
     }
@@ -373,20 +379,22 @@ footer img {
         flex-direction: column-reverse;
         text-align: center;
         margin: auto;
-        margin-top:30px;
+        margin-top: 30px;
         justify-content: space-between;
         /* padding: 40px; */
     }
-    #respuestabusqueda div p{
-        width: 90%;;
+
+    #respuestabusqueda div p {
+        width: 90%;
+        ;
         padding: 10px;
     }
 
-    .gifError{
-    width: 90%;
-    margin: auto;
-    padding: 30px;
-}
+    .gifError {
+        width: 90%;
+        margin: auto;
+        padding: 30px;
+    }
 }
 
 
