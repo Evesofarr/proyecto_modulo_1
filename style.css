@@ -137,13 +137,11 @@ footer img {
 }
 
 #semana h1 {
-    order: 1;
     margin-bottom: 100px;
     padding-bottom: 10px;
     border-bottom: 2px dotted black;
     color: hsl(29, 17%, 41%);
 }
-
 
 #recetaSemana a img {
     width: 45%;
@@ -155,13 +153,18 @@ footer img {
     padding-bottom: 40px;
 }
 
+#recetaSemana{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 #recetaSemana p {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
 }
 
-#recetaSemana h1 {
+#recetaSemana h2 {
     font-size: 30px;
     text-align: center;
 }

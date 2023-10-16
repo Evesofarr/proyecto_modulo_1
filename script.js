@@ -6,24 +6,26 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         let semana = document.querySelector("#semana");
         let recetaSemana = document.querySelector("#recetaSemana");
 
-        let nombre = document.createElement("h1");
+        let nombre = document.createElement("h2");
+        let recipe = document.createElement("h1")
         let meGusta = document.createElement("button")
         let texto = document.createElement("p");
         let link = document.createElement("a");
         let foto = document.createElement("img");
         link.target = "_blank";
-        //añade clase al button
+
         meGusta.classList.add("meGustaButton");
 
         nombre.textContent = data.meals[0].strMeal;
         let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
         meGusta.textContent = isFavorite ? "❤" : "♡";
+        recipe.textContent = "RECIPE OF THE WEEK..."
         texto.textContent = `This week we have a ${data.meals[0].strArea} ${data.meals[0].strCategory}, the perfect combination meal for you to enjoy it.`;
         foto.src = data.meals[0].strMealThumb
         link.href = data.meals[0].strSource
 
         meGusta.addEventListener('click', () => {
-            // Verifica si la receta está en la lista de favoritos y devuelve true or false (se puede hacer con forEach tambien pero hay que poner true/false porque sino no devuelve nada)
+
             let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
             if (isFavorite) {
@@ -39,15 +41,15 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                 meGusta.textContent = "❤";
             }
 
-            // Guarda la lista actualizada en localStorage
             localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
         });
 
         recetaSemana.appendChild(texto);
         recetaSemana.appendChild(meGusta);
         link.appendChild(foto)
+        semana.appendChild(recipe)
         recetaSemana.appendChild(link)
-        semana.appendChild(nombre);
+        recetaSemana.appendChild(nombre);
     })
 
     .catch(error => {
@@ -86,7 +88,7 @@ buscar.addEventListener("click", function () {
             let foto = document.createElement("img");
 
 
-            //añade clase al button
+
             meGusta.classList.add("meGustaButton");
 
             nombre.textContent = data.meals[0].strMeal
@@ -103,7 +105,7 @@ buscar.addEventListener("click", function () {
                 respuestabusqueda.removeChild(respuestabusqueda.firstChild);
             }
             meGusta.addEventListener('click', () => {
-                // Verifica si la receta está en la lista de favoritos
+
                 let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
@@ -119,7 +121,6 @@ buscar.addEventListener("click", function () {
                     meGusta.textContent = "❤";
                 }
 
-                // Guarda la lista actualizada en localStorage
                 localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
             });
             respuestabusqueda.appendChild(contenidobusqueda);
@@ -157,7 +158,7 @@ function fetchAndDisplayRandomRecipe() {
             let link = document.createElement("a");
             let foto = document.createElement("img");
             link.target = "_blank";
-            //añade clase al button
+
             meGusta.classList.add("meGustaButton");
 
             nombre.textContent = data.meals[0].strMeal;
@@ -167,7 +168,7 @@ function fetchAndDisplayRandomRecipe() {
             link.href = data.meals[0].strSource;
 
             meGusta.addEventListener('click', () => {
-                // Verifica si la receta está en la lista de favoritos
+
                 let isFavorite = favoriteMeals.some(item => item.receta === data.meals[0].strMeal);
 
                 if (isFavorite) {
@@ -183,7 +184,7 @@ function fetchAndDisplayRandomRecipe() {
                     meGusta.textContent = "❤";
                 }
 
-                // Guarda la lista actualizada en localStorage
+
                 localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
             });
 
