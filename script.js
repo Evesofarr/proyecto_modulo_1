@@ -54,7 +54,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 
     .catch(error => {
         let fotoerror = document.createElement("img");
-        fotoerror.src = "resources/error_random.gif";
+        fotoerror.src = "resources/ERROR.gif";
         let semana = document.querySelector("#semana");
         favs.appendChild(fotoerror);
     });
@@ -133,7 +133,7 @@ buscar.addEventListener("click", function () {
         .catch(error => {
             console.log(error);
             let fotoerror = document.createElement("img");
-            fotoerror.src = "resources/error_random.gif";
+            fotoerror.src = "resources/ERROR.gif";
             let respuestabusquedas = document.querySelector("#respuestabusqueda");
             respuestabusquedas.appendChild(fotoerror);
         });
